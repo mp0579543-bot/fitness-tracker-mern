@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/auth";
+// Localhost ke bajaye Vercel environment variable use karein
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const API_URL = `${BASE_URL}/api/auth`;
 
 const register = async (userData) => {
   const response = await axios.post(
